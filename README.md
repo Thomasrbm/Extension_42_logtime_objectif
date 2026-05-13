@@ -2,6 +2,23 @@
 
 Extension navigateur (Firefox + Chrome) qui suit ton logtime du mois en cours par rapport à un objectif quotidien dérivé de ton objectif mensuel.
 
+## Install rapide
+
+[![Install en 1 commande](https://img.shields.io/badge/install-1%20commande-brightgreen?style=for-the-badge&logo=gnubash&logoColor=white)](#install-rapide)
+
+Copie-colle cette ligne dans ton terminal :
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/Thomasrbm/Extension_42_logtime_objectif/main/install.sh)
+```
+
+Le script :
+1. télécharge l'extension dans `~/.local/share/ft-logtime-tracker/`
+2. build le `.xpi` pour Firefox
+3. ouvre la page d'extensions de ton navigateur
+
+> ⚠️ Dernière étape manuelle (les navigateurs interdisent l'install 100% auto pour raisons de sécurité) : clic sur « Charger l'extension non empaquetée » dans la page qui s'ouvre. Le script t'indique exactement quoi cliquer.
+
 ## Affichage
 
 ```
@@ -28,7 +45,7 @@ Extension navigateur (Firefox + Chrome) qui suit ton logtime du mois en cours pa
 - Rouge + signe `−` quand tu es en retard
 - Calcul : `delta = heures_faites_ce_mois − (objectif_mensuel / jours_du_mois × jour_actuel)`
 
-## Installation
+## Installation manuelle
 
 ### Firefox (dev)
 1. `about:debugging#/runtime/this-firefox`
