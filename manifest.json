@@ -1,13 +1,16 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "42 Logtime Tracker",
   "version": "1.0.0",
   "description": "Track monthly logtime goal against daily targets on the 42 intra.",
-  "permissions": ["storage"],
-  "host_permissions": [
+
+  "permissions": [
+    "storage",
+    "alarms",
     "https://api.intra.42.fr/*"
   ],
-  "action": {
+
+  "browser_action": {
     "default_popup": "popup.html",
     "default_title": "42 Logtime",
     "default_icon": {
@@ -16,15 +19,23 @@
       "128": "icons/icon-128.png"
     }
   },
+
   "background": {
-    "service_worker": "background.js"
+    "scripts": ["background.js"]
   },
+
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+
   "browser_specific_settings": {
     "gecko": {
       "id": "ft-logtime-tracker@thomas.local",
       "strict_min_version": "109.0"
     }
   },
+
   "icons": {
     "16": "icons/icon-16.png",
     "48": "icons/icon-48.png",

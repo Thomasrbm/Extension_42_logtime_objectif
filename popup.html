@@ -2,86 +2,59 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>42 Logtime</title>
   <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
-  <!-- Main view -->
-  <div id="view-main" class="view hidden">
-    <header class="top">
-      <span class="label">objectif</span>
-      <span id="goal-display" class="goal">— h</span>
-      <button id="btn-settings" class="icon-btn" title="Settings" aria-label="Settings">⚙</button>
-    </header>
 
-    <main class="center">
-      <div id="delta" class="delta">
-        <span id="delta-sign" class="sign">·</span><span id="delta-value">--</span><span class="unit">h</span>
-      </div>
-      <div id="status-label" class="status">—</div>
-    </main>
+<div class="view">
+  <header class="top">
+    <span class="label">objectif</span>
+    <span id="goal-display" class="goal">config requise</span>
 
-    <aside class="side">
-      <div class="side-line"><span class="k">par jour</span><span id="daily-target" class="v">— h</span></div>
-      <div class="side-line"><span class="k">fait</span><span id="done" class="v">— h</span></div>
-      <div class="side-line"><span class="k">attendu</span><span id="expected" class="v">— h</span></div>
-      <div class="side-line"><span class="k">jour</span><span id="day-progress" class="v">— / —</span></div>
-    </aside>
+    <button id="btn-settings" class="icon-btn">
+      ⚙
+    </button>
+  </header>
 
-    <footer class="bot">
-      <span id="last-sync" class="muted">—</span>
-      <button id="btn-refresh" class="text-btn">refresh</button>
-    </footer>
-  </div>
-
-  <!-- Settings view -->
-  <div id="view-settings" class="view hidden">
-    <header class="top">
-      <span class="label">settings</span>
-      <button id="btn-back" class="icon-btn" title="Back" aria-label="Back">←</button>
-    </header>
-
-    <main class="settings">
-      <label class="field">
-        <span class="field-label">login 42</span>
-        <input type="text" id="input-login" placeholder="ex: tdameros" autocomplete="off" spellcheck="false" />
-      </label>
-
-      <label class="field">
-        <span class="field-label">client uid</span>
-        <input type="text" id="input-uid" placeholder="u-s4t2ud-..." autocomplete="off" spellcheck="false" />
-      </label>
-
-      <label class="field">
-        <span class="field-label">client secret</span>
-        <input type="password" id="input-secret" placeholder="s-s4t2ud-..." autocomplete="off" spellcheck="false" />
-      </label>
-
-      <label class="field">
-        <span class="field-label">objectif mensuel (heures)</span>
-        <input type="number" id="input-goal" placeholder="300" min="1" step="1" />
-      </label>
-
-      <div class="settings-actions">
-        <button id="btn-save" class="primary">sauvegarder</button>
-        <button id="btn-test" class="secondary">tester</button>
-      </div>
-      <div id="settings-status" class="settings-status"></div>
-    </main>
-
-    <footer class="bot bot-settings">
-      <span class="muted">le secret reste local, jamais envoyé ailleurs que api.intra.42.fr</span>
-    </footer>
-  </div>
-
-  <!-- Loading state -->
-  <div id="view-loading" class="view">
-    <div class="loading">
-      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+  <main class="center">
+    <div id="delta" class="delta">
+      <span id="delta-sign" class="sign">·</span>
+      <span id="delta-value">--</span>
+      <span class="unit">h</span>
     </div>
-  </div>
 
-  <script src="popup.js"></script>
+    <div id="status-label" class="status">
+      —
+    </div>
+  </main>
+
+  <aside class="side">
+    <div class="side-line">
+      <span class="k">par jour</span>
+      <span id="daily-target" class="v">— h</span>
+    </div>
+
+    <div class="side-line">
+      <span class="k">fait</span>
+      <span id="done" class="v">— h</span>
+    </div>
+
+    <div class="side-line">
+      <span class="k">attendu</span>
+      <span id="expected" class="v">— h</span>
+    </div>
+  </aside>
+
+  <footer class="bot">
+    <span id="last-sync" class="muted">—</span>
+
+    <button id="btn-refresh" class="text-btn">
+      refresh
+    </button>
+  </footer>
+</div>
+
+<script src="popup.js"></script>
 </body>
 </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>42 Logtime Settings</title>
+
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+
+<div class="settings"
+     style="padding:40px; max-width:700px; margin:auto;">
+
+  <h1 style="margin-bottom:24px;">
+    42 Logtime Settings
+  </h1>
+
+  <label class="field">
+    <span class="field-label">login 42</span>
+
+    <input type="text" id="input-login" />
+  </label>
+
+  <label class="field">
+    <span class="field-label">client uid</span>
+
+    <input type="text" id="input-uid" />
+  </label>
+
+  <label class="field">
+    <span class="field-label">client secret</span>
+
+    <input type="password" id="input-secret" />
+  </label>
+
+  <label class="field">
+    <span class="field-label">
+      objectif mensuel
+    </span>
+
+    <input type="number" id="input-goal" />
+  </label>
+
+  <div class="settings-actions">
+    <button id="btn-save" class="primary">
+      sauvegarder
+    </button>
+
+    <button id="btn-test" class="secondary">
+      tester
+    </button>
+  </div>
+
+  <div id="settings-status"
+       class="settings-status">
+  </div>
+</div>
+
+<script src="options.js"></script>
+</body>
+</html>
